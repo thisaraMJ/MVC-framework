@@ -13,9 +13,17 @@ class homeController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
-   public function aboutUs(){
+   public function forgot(){
       $this->view('home/forgotView');
       
       $this->view->render(); // This is how load the view
    }
+
+   // public function ministry(){
+   //    $this->view('ministry/ministryView');
+      
+   //    $this->view->render(); // This is how load the view
+   // }
+
+  
 }

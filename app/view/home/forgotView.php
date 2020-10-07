@@ -3,8 +3,8 @@
 
 <head>
    <meta charset="utf-8">
-   <title>login</title>
-   <link rel="stylesheet" type="text/css" href="../../css/logFog.css">
+   <title>forgot password</title>
+   <link rel="stylesheet" type="text/css" href="/test/app/css/logFog.css">
    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 

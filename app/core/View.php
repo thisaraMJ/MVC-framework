@@ -15,4 +15,8 @@ class View{
          include VIEW.$this->view_file.'.php';
       }
    }
+
+   public function getAction(){
+      return (explode('/',$this->view_file)[1]);
+   }
 }

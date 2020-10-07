@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>login</title>
-	<?php echo ROOT; //exit(); ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo ROOT?>app/css/logFog.css'">
+	<?php //echo VIEW; //exit(); ?>
+	<link rel="stylesheet" type="text/css" href="/test/app/css/logFog.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	
 </head>
@@ -12,7 +12,7 @@
 	<h2> FADTS | User Login</h2>
 	
 		<div class="box">		
-			<form class="box" method="post" action="../controllers/login_controller.php">
+			<form class="box" method="post" action="/test/app/css/logFog.css">
 			<fieldset style="padding: 35px 50px">
 			<legend style="color: #218BDB"><B>Sign in to your account</B> </legend>	
 				<div class="form-group">
@@ -26,7 +26,7 @@
   			<button type="submit" class="btn btn-primary">Login</button><br><br>
   			<div class="new-account">
 				<label style="font-size: 13px"><B>Don't remember password?</B></label>
-				<a href="/home/aboutus"><B>Click here</B></a>	
+				<a href="/test/home/forgot"><B>Click here</B></a>	
 			</div>	
 			</fieldset>
 			</form>

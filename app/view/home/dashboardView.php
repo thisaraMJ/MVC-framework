@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Page title</title>
 	<meta name="viewpoint" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../../css/main.css">
+	<link rel="stylesheet" type="text/css" href="/test/app/css/main.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 	<script src="https://kit.fontawesome.com/yourcode.js"></script>
