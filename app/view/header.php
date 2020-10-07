@@ -20,7 +20,7 @@
       <nav>
          <label class="logo">FADTS</label>
          <ul>
-            <li><a href="#" <?php echo ($action == 'index' ? 'class = active':'') ?>><B>Home</B></li>
+            <li><a href="#" <?php echo ($action == 'indexView' ? "class = active":'') ?>><B>Home</B></li>
             <li><a href="#"><B>About</B></li>
             <li><a href="#"><B>Notifications</B></li>
             <li><a class="log_button" href="/test/home/index"><B>Logout</B></li>
