@@ -11,7 +11,7 @@
 <body>
    <h2> FADTS | Forgot Password</h2>
    <div class="box">
-      <form class="box" method="post">
+      <form class="box" method="post" action="/test/app/model/home/loginModel.php">
          <fieldset style="padding: 35px 50px">
             <legend style="color: #218BDB"><B>Sign in to your account</B></legend>
             <div class="form-group">
@@ -20,9 +20,9 @@
             </div>
             <div class="form-group">
                <label for="email"><B>Email</B></label>
-               <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Enter Email">
+               <input type="email" class="form-control" name="email" placeholder="Enter Email">
             </div>
-            <button type="submit" class="btn btn-primary"><B>Submit</B></button><br><br>
+            <button type="submit" name="fogsubmit" class="btn btn-primary"><B>Submit</B></button><br><br>
             <div class="new-account">
             </div>
          </fieldset>
