@@ -2,28 +2,39 @@
 
 class homeController extends Controller{
 
-   public function index($id='',$name=''){
+   public function index(){           // This is how load the view of login
+      $this->view('home/loginView');
       
-      // this is how create a view object
-      $this->view('home/loginView',[  
-         'name' => $name,                      //these array values are optional
-         'id' => $id
-      ]);
-      
-      $this->view->render(); // This is how load the view
+      $this->view->render(); 
    }
 
-   public function forgot(){
+   public function indexModel(){     // This is how load the model for login
+      $this->model('home/loginModel');
+      
+      $this->model->load(); 
+   }
+
+   public function forgot(){          // This is how load the view of forgot password
       $this->view('home/forgotView');
       
-      $this->view->render(); // This is how load the view
+      $this->view->render(); 
    }
 
-   // public function ministry(){
-   //    $this->view('ministry/ministryView');
+   public function forgotModel(){          // This is how load the view of forgot password
+      $this->model('home/forgotModel');
       
-   //    $this->view->render(); // This is how load the view
-   // }
+      $this->model->load(); 
+   }
 
+
+   
+   // public function index($id='',$name=''){  Example for send data to a view
+   //    $this->view('home/loginView',[  
+   //       'name' => $name,                    
+   //       'id' => $id
+   //    ]);
+      
+   //    $this->view->render(); 
+   // }
   
 }

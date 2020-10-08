@@ -1,6 +1,7 @@
 <?php 
-   $action = $this->getAction(); 
-   //print $action;
+
+   $action = $this->getAction(); // in here $action is, view file name without .php
+
 ?>
 
 <!DOCTYPE html>
@@ -20,15 +21,17 @@
       <nav class="head">
          <label class="logo">FADTS</label>
          <ul>
-            <li><a href="#" <?php echo ($action == 'indexView')? "class = active":'' ?>>Home</li>
+            <li><a href="#" >Home</li>
             <li><a href="#">About</li>
             <li><a href="#">Notifications</li>
             <li><a class="log_button" href="/test/home/index">
-            <button class="log_button" type="submit" name="logoutsubmit" ><B>LOGOUT</B></button>
+                  <?php
+                        session_start();
+                        session_unset();
+                        session_destroy();
+                  ?>
+                  <B>LOGOUT</B>
             </li>
-            <!-- <a href="http://www.stackoverflow.com">
-               <input type="button" name="so_link" value="Click me!">
-            </a> -->
          </ul>
       </nav>
    </div>

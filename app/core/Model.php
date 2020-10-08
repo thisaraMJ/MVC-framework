@@ -17,6 +17,6 @@ class Model{
    }
 
    public function getAction(){
-      return (explode('/',$this->view_file)[1]);
+      return (explode('/',$this->model_file)[1]);
    }
 }

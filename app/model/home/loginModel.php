@@ -1,35 +1,67 @@
 <?php 
 if(isset($_POST['logsubmit'])){
 
-   //echo ROOT;
-   //exit();
    require ('../../conn/connection.php');   // database connection file calling
 
    $username = $_POST['username'];
    $password    = $_POST['password'];
+   // echo "test1";
+   // exit();
 
-   $sql = "SELECT username FROM user WHERE (username=?) AND (password=?)";
+   $sql = "SELECT * FROM user WHERE username=?";
    $stmt = mysqli_stmt_init($con);
+   // echo "test1";
+   // exit();
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
-      echo "sql error";
-      exit();
-      //header('Location:/test/home/index?error=sql_error');
-     
+      // echo "test1";
+      // exit();
+      header('Location:/test/home/index');
+      exit();     
    }
    else{
-      mysqli_stmt_bind_param($stmt,"ss",$username,$password);
+      // echo "test2";
+      // exit();
+      mysqli_stmt_bind_param($stmt,"s",$username);
       mysqli_stmt_execute($stmt);
-      mysqli_stmt_store_result($stmt);
-      $resultcheck = mysqli_stmt_num_rows($stmt);
+      $result = mysqli_stmt_get_result($stmt);
 
-      if($resultcheck == 1){
-         echo "user found";
-         header('Location: /test/home/index?user_found');
+      if($row = mysqli_fetch_assoc($result)){
+
+         //$pwdcheck = password_verify($password,$row['password']);
+         // echo $password."\n";
+         // echo $row['password'];
+         // exit();
+         if($password != $row['password']){
+            echo "test1";
+            exit();
+            header('Location:/test/home/index');
+            exit();  
+         }
+         else{
+            // echo "test2";
+            // exit();
+            session_start();
+            $_SESSION['userID'] = $row['userid'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['userrole'] = $row['userrole'];
+
+            if($_SESSION['userrole']=='villageofficer'){ $controller ='village'; }
+            if($_SESSION['userrole']=='divisionalsec'){ $controller ='divisional'; }
+            if($_SESSION['userrole']=='ministry'){ $controller ='ministry'; }
+            if($_SESSION['userrole']=='auditor'){ $controller ='audit'; }
+            
+            header("Location:/test/$controller/index");
+            exit();
+
+         }
+
       }
       else{
          echo "results not found";
-         header('Location:/test/home/index?error=wrong_username_or_password');
+         exit();
+         header('Location:/test/home/index');
          exit();
       }
    }
@@ -37,6 +69,8 @@ if(isset($_POST['logsubmit'])){
    mysqli_close($con);
 }
 else{
+   echo "submit obala na";
+   exit();
    header('Location:/test/home/index?error=direct_access_not_allowed');
    exit();
 }

@@ -8,5 +8,11 @@ class auditController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
+   public function indexModel(){
+      $this->model('auditor/indexModel');
+      
+      $this->model->load(); // This is how load the model
+   }
+
   
 }

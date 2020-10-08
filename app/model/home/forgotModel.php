@@ -1,21 +1,18 @@
 <?php 
+
 if(isset($_POST['fogsubmit'])){
 
-   //echo ROOT;
-   //exit();
    require ('../../conn/connection.php');   // database connection file calling
 
    $username = $_POST['username'];
    $password    = $_POST['password'];
 
-   $sql = "SELECT username FROM user WHERE (username=?) AND (password=?)";
+   $sql = "SELECT * FROM user WHERE (username=?) AND (password=?)";
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
-      echo "sql error";
-      exit();
-      //header('Location:/test/home/index?error=sql_error');
-     
+      header('Location:/test/home/index?error=sql_error');
+      exit();   
    }
    else{
       mysqli_stmt_bind_param($stmt,"ss",$username,$password);

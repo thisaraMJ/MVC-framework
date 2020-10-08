@@ -24,7 +24,7 @@
    <a href="#" class="sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>
-   <a href="login.php" class="sidebar_link">
+   <a href="/test/home/index" class="sidebar_link">
       <span class="material-icons">exit_to_app</span>Logout
    </a>
 </div>
